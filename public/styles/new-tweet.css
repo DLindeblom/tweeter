@@ -11,6 +11,8 @@ label {
   
   font-family: "Source Sans Pro";
   font-weight: bold;
+
+  padding-bottom: 5px;
 }
 
 form div {
@@ -30,7 +32,11 @@ form textarea {
 
   border-color:black;
 
-  line-height: 50%;
+  line-height: 100%;
+
+  font-family: "Source Sans Pro";
+  font-size: 80%;
+  font-weight: bold;
 
 }
 
@@ -53,3 +59,4 @@ form div output {
   font-family: "Bungee";
   
 }
+
