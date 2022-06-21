@@ -1,8 +1,7 @@
 header {
-  top: 80px;
-  left: 0px;
+
   height: 400px;
-  width: auto;
+  width: 100%;
 
   display: flex;
   align-items: center;
@@ -10,18 +9,25 @@ header {
   flex-direction: column;
 
   z-index: 1;
+
+  background-color: #a38d00;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");;
+  
 }
 
-header img {
-  display: flex;
-
+ header img {
+  
+  top: 80px;
+  position: relative;
+  height: 8em;
+  width: 8em;
+  
 }
 
 header h2 {
-  display: flex;
-
-  margin-top: 0;
-
+  
+  top: 30px;
+  position: relative;
   color: #FFFFFF;
 
 }
