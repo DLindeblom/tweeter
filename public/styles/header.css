@@ -1,0 +1,27 @@
+header {
+  top: 80px;
+  left: 0px;
+  height: 400px;
+  width: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  z-index: 1;
+}
+
+header img {
+  display: flex;
+
+}
+
+header h2 {
+  display: flex;
+
+  margin-top: 0;
+
+  color: #FFFFFF;
+
+}

@@ -1,4 +1,4 @@
-"use strict";
+"use strict"; // better coding practices
 
 // Basic express setup:
 
