@@ -51,12 +51,18 @@ form div button {
   background-color: #4056A1;
 }
 
-form div output {
+.counter {
   display: flex;
 
   margin-top: 10px;
 
   font-family: "Bungee";
   
+}
+
+.red {
+
+  color: red;
+
 }
 
