@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  let maxlength = 10;
+  let maxlength = 140;
   $("#tweet-text").on("input", function() {
     // console.log(this);
     let currentlength = $(this).val().length;

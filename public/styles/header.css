@@ -1,4 +1,4 @@
-header {
+.main-header {
 
   height: 400px;
   width: 100%;
@@ -15,7 +15,7 @@ header {
   
 }
 
- header img {
+ .main-header img {
   
   top: 80px;
   position: relative;
@@ -24,7 +24,7 @@ header {
   
 }
 
-header h2 {
+.main-header h2 {
   
   top: 30px;
   position: relative;
