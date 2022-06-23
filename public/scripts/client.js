@@ -6,7 +6,13 @@
 
 $(document).ready(function() {
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
+  
 
   // sends post request using ajax in jquery serialized form
   const $id = $('#target');
@@ -20,9 +26,11 @@ $(document).ready(function() {
       alert("Please enter text")
     }
     let data = $(this).serialize();
-    $.post("/tweets/", data);
+    $.post("/tweets/", data, function(data){
+      loadTweets(data)
+    });
     $id[0].reset()
-    
+    $counter.text() = 140
     
     
     // console.log(data)
@@ -33,12 +41,12 @@ $(document).ready(function() {
 
   const loadTweets = function() {
 
-    $.getJSON("/tweets/", function(data) {renderTweets(data)})
+    $.get("/tweets/", function(data) {
+      renderTweets(data)})
 
   }
   
   loadTweets()
-
 
   // sorts the array of objects and then passes them to createTweetElement which then appaends them to index.html body
   const renderTweets = function(tweets) {
@@ -59,6 +67,7 @@ $(document).ready(function() {
     const $handle = tweet.user.handle;
     const $text = tweet.content.text;
     const $time = timeago.format(tweet.created_at);
+    const safeHTML = `${escape($text)}`;
 
     let $tweet = $(`<article>  <article id="tweet-article">
     <header>
@@ -75,7 +84,7 @@ $(document).ready(function() {
       </div>
     </header>
     <div class="text-area">
-        ${$text}
+        ${safeHTML}
     </div>
     <footer>
       <time>${$time}</time>
