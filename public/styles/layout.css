@@ -41,7 +41,7 @@ body {
   
  }
 
- .article {
+ #tweet-article {
 
   display:flex;
   flex-direction: column;
@@ -54,11 +54,10 @@ body {
 
   border-style: solid;
 
-  transition: box-shadow .3s;
 
  }
 
- .article:hover{
+ #tweet-article:hover{
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
  }
 
@@ -95,7 +94,7 @@ body {
 }
  
 
- article footer {
+ #tweet-article footer {
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -109,7 +108,7 @@ body {
   font-weight: bold;
  }
 
- article header {
+ #tweet-article header {
   display: flex;
   justify-content: space-between;
   
