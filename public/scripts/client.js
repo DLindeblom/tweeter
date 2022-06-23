@@ -6,6 +6,17 @@
 
 $(document).ready(function() {
 
+  // sends post request using ajax in jquery serialized form
+  const $id = $('#target');
+
+  $id.submit(function (event) {
+    event.preventDefault();
+    let data = $(this).serialize();
+    $.post("/tweets/", data);
+    // console.log(data)
+
+  });
+
   const data = [
     {
       "user": {
@@ -23,23 +34,27 @@ $(document).ready(function() {
       "user": {
         "name": "Descartes",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
+        "handle": "@rd"
+      },
       "content": {
         "text": "Je pense , donc je suis"
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
 
+  // sorts the array of objects and then passes them to createTweetElement which then appaends them to index.html body
   const renderTweets = function(tweets) {
 
     for (let tweet of tweets) {
-      let result = createTweetElement(tweet)
-      $('#tweets-container').prepend(result)
+      let result = createTweetElement(tweet);
+      $('#tweets-container').prepend(result);
     }
 
-  }
+  };
 
+
+  // takes in the object and returns the html with specific data
   const createTweetElement = function(tweet) {
 
     const $user = tweet.user.name;
