@@ -17,7 +17,27 @@ $(document).ready(function() {
 
   });
 
-  const data = [
+  // uses ajax get request to get tweets
+
+  const loadTweets = function() {
+    
+    // $.ajax({
+    //   url:"/tweets/",
+    //   type: "GET",
+    //   dataType: "json",
+    //   success: function(data) {
+    //     renderTweets(data)
+    //   }
+
+    // })
+
+    $.getJSON("/tweets/", function(data) {renderTweets(data)})
+
+  }
+  
+  loadTweets()
+
+/*   const data = [
     {
       "user": {
         "name": "Newton",
@@ -41,7 +61,7 @@ $(document).ready(function() {
       },
       "created_at": 1461113959088
     }
-  ];
+  ]; */
 
   // sorts the array of objects and then passes them to createTweetElement which then appaends them to index.html body
   const renderTweets = function(tweets) {
