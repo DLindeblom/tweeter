@@ -6,33 +6,41 @@
 
 $(document).ready(function() {
 
-  const escape = function (str) {
+  // hides the error message until an invalid form submittal
+  $("#error").hide();
+
+  // function used to prevent any text other than strings being submitted by form
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  
 
   // sends post request using ajax in jquery serialized form
   const $id = $('#target');
-  const $counter = $(".counter")
+  let $counter = $(".counter");
 
-  $id.submit(function (event) {
+  $id.submit(function(event) {
     event.preventDefault();
-    if($counter.text() < 0) {
-      alert("Too many characters")
-    } else if ($counter.text() > 139) {
-      alert("Please enter text")
+    $("#error").slideUp(100);
+    if ($counter.text() > 139) {
+      $("#error").text("You need to enter at least 1 character, c'mon.");
+      $("#error").slideDown();
+      return;
+    } else if ($counter.text() < 0) {
+      $("#error").text("You have entered too many characters. Simmer down.");
+      $("#error").slideDown();
+      return;
     }
+
     let data = $(this).serialize();
-    $.post("/tweets/", data, function(data){
-      loadTweets(data)
-    });
-    $id[0].reset()
-    $counter.text() = 140
-    
-    
+    $.post("/tweets/", data, function() { loadTweets(); });
+
+    $id[0].reset();
+    $counter.text(140);
+
+
     // console.log(data)
 
   });
@@ -42,14 +50,17 @@ $(document).ready(function() {
   const loadTweets = function() {
 
     $.get("/tweets/", function(data) {
-      renderTweets(data)})
+      renderTweets(data);
+    });
 
-  }
-  
-  loadTweets()
+  };
+
+
 
   // sorts the array of objects and then passes them to createTweetElement which then appaends them to index.html body
   const renderTweets = function(tweets) {
+
+    $("#tweets-container").empty();
 
     for (let tweet of tweets) {
       let result = createTweetElement(tweet);
@@ -95,7 +106,6 @@ $(document).ready(function() {
       </div>
     </footer>
   </article> </article>`);
-
 
     return $tweet;
   };

@@ -4,6 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -24,10 +25,13 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/responsiveDesign.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
   <!-- App JS -->
@@ -39,21 +43,23 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>Tweeter</span>
-    <p>
-      <label><strong>Write</strong> a new tweet</i></label>
-      <i class="fa-solid fa-angles-down"></i>
-    </p>
+    
+      <p>
+        <label><strong>Write</strong> a new tweet</label>
+        <i class="fa-solid fa-angles-down"></i>
+      </p>
+   
   </nav>
 
   <header class="main-header">
-    <img src="/images/profile-hex.png">
+    <img src="https://previews.123rf.com/images/kongvector/kongvector1803/kongvector180306764/98364943-thumbs-up-potato-chips-character-cartoon.jpg">
     <br>
-    <h2>Dan Lindeblom</h2>
+    <h2><strong>Dan</strong> Lindeblom</h2>
   </header>
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+      <p id="error"></p>
       <form method="POST" action="/tweets" id="target">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
