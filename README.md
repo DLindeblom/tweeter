@@ -16,3 +16,17 @@ Tweeter is a simple, single-page Twitter clone. It is my first project that focu
 - Express
 - Node 5.10.x or above
 - Chance
+
+Here are some screenshots of the project:
+
+The first screenshot shows the app in full desktop mode, with the profile on the left, and the text input and posteed tweets on the right.
+
+https://github.com/DLindeblom/tweeter/blob/master/docs/Screenshot%20from%202022-06-24%2009-30-53.png?raw=true
+
+The second screenshot shows the app in a smaller format. Notice how the header has now moved to the top of the page. 
+
+https://github.com/DLindeblom/tweeter/blob/master/docs/Screenshot%20from%202022-06-24%2009-31-28.png?raw=true
+
+The third screenshot shows the app in the same smaller format, only having scrolled down.  The navigation bar remains fixed to the top!
+
+https://github.com/DLindeblom/tweeter/blob/master/docs/Screenshot%20from%202022-06-24%2009-31-40.png?raw=true
