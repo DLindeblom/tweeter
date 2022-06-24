@@ -1,0 +1,72 @@
+@media only screen and (max-width: 768px) {
+
+  nav {
+
+    padding-left: .5em;
+    padding-right: .5em;
+
+  }
+
+  .text-area {
+
+    overflow-y: scroll;
+  }
+
+
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    position: fixed;
+  }
+
+  body {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+  }
+
+  .main-header {
+
+    width: 40%;
+    justify-content: left;
+    flex-direction: column;
+    flex-basis: auto;
+    margin-top: 300px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top: 50px;
+    
+  }
+
+  .container {
+
+    width: 60%;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: row;
+    justify-content: right;
+    padding-right: 1em;
+    margin-top: 200px
+
+  }
+
+  form textarea{
+
+    display:flex
+
+  }
+
+  .main-header img {
+
+    top: 0px;
+
+  }
+
+  .main-header h2 {
+ 
+    top: 0px
+  }
+}
